@@ -20,8 +20,8 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_retirar):
 def calcula_pontos_regra_simples(dados_rolados):
     pontuacao = {}
     for dado in dados_rolados:
-        chave = str(dado)
+        chave = dado
         pontuacao[chave] = pontuacao.get(chave, 0) + dado
     for i in range(1,7):
-        pontuacao[str(i)] = pontuacao.get(str(i), 0)
+        pontuacao[i] = pontuacao.get(i, 0)
     return dict(sorted(pontuacao.items()))
