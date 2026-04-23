@@ -25,5 +25,3 @@ def calcula_pontos_regra_simples(dados_rolados):
     for i in range(1,7):
         pontuacao[str(i)] = pontuacao.get(str(i), 0)
     return dict(sorted(pontuacao.items()))
-dados = [1,2,5,5,6]
-print(calcula_pontos_regra_simples(dados))
