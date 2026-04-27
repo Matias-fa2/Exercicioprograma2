@@ -39,14 +39,19 @@ def calcula_pontos_sequencia_baixa (dados_rolados):
     dados_rolados = sorted(dados_rolados)
     n = 0
     r = 0
+    y = 0
+    m = 0
     while len(dados_rolados)-1 > n :
         if dados_rolados[n+1] == dados_rolados[n]:
             y = 0
         elif dados_rolados[n+1] - dados_rolados[n] == 1:
+            y = 1
+        m = m + y
+        if m >= 4:
             r = 15
-        elif dados_rolados[n+1] - dados_rolados[n] != 1:
-            r = 0
             break
+        if dados_rolados[n+1] - dados_rolados[n] != 1:
+            r = 0
         n += 1
     return(r)
 
