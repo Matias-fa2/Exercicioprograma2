@@ -46,6 +46,8 @@ def calcula_pontos_sequencia_baixa (dados_rolados):
             y = 0
         elif dados_rolados[n+1] - dados_rolados[n] == 1:
             y = 1
+        elif dados_rolados[n+1] - dados_rolados[n] != 1:
+            y = 0
         m = m + y
         n += 1
     if m >= 4:
