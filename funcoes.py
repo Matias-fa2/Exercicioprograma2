@@ -40,7 +40,7 @@ def calcula_pontos_sequencia_baixa (dados_rolados):
     n = 0
     r = 0
     y = 0
-    m = 0
+    m = 1
     while len(dados_rolados)-1 > n :
         if dados_rolados[n+1] == dados_rolados[n]:
             y = 0
