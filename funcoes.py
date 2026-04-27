@@ -38,8 +38,8 @@ def calcula_pontos_soma (dados_rolados):
 def calcula_pontos_sequencia_baixa(dados_rolados):
     dados_rolados = sorted(set(dados_rolados))  
     s = 1 
-
-    for i in range(len(dados_rolados) - 1):
+    i = 0
+    while i < len(dados_rolados) - 1:
         if dados_rolados[i+1] - dados_rolados[i] == 1:
             s += 1
             if s >= 4:
@@ -52,8 +52,8 @@ def calcula_pontos_sequencia_baixa(dados_rolados):
 def calcula_pontos_sequencia_alta(dados_rolados):
     dados_rolados = sorted(set(dados_rolados))  
     s = 1 
-
-    for i in range(len(dados_rolados) - 1):
+    i = 0
+    while i < len(dados_rolados) - 1:
         if dados_rolados[i+1] - dados_rolados[i] == 1:
             s += 1
             if s >= 5:
@@ -62,3 +62,4 @@ def calcula_pontos_sequencia_alta(dados_rolados):
             s = 1
 
     return 0
+
