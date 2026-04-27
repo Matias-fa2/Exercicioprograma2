@@ -34,3 +34,15 @@ def calcula_pontos_soma (dados_rolados):
         r = r + x
         n += 1
     return(r)
+
+def calcula_pontos_sequencia_baixa (dados_rolados):
+    x = sorted(dados_rolados)
+    while len(dados_rolados)-1 > n :
+        if dados_rolados[n+1] - dados_rolados[n] == 1:
+            r = 15
+        if dados_rolados[n+1] - dados_rolados[n] != 1:
+            r = 0
+            break
+        n += 1
+    return(r)
+
