@@ -37,20 +37,24 @@ def calcula_pontos_soma (dados_rolados):
 
 def calcula_pontos_sequencia_baixa (dados_rolados):
     dados_rolados = sorted(dados_rolados)
+    g = []
     n = 0
     r = 0
     y = 0
-    m = 1
     while len(dados_rolados)-1 > n :
-        if dados_rolados[n+1] == dados_rolados[n]:
-            y = 0
-        elif dados_rolados[n+1] - dados_rolados[n] == 1:
-            y = 1
-        elif dados_rolados[n+1] - dados_rolados[n] != 1:
-            y = 0
-        m = m + y
+        if dados_rolados[n+1] != dados_rolados[n]:
+            x = dados_rolados[n]
+            g.append(x)
         n += 1
-    if m >= 4:
-        r = 15
+    if dados_rolados[len(dados_rolados)-1] != dados_rolados[len(dados_rolados)]:
+        x = dados_rolados[len(dados_rolados)]
+        g.append(x)
+    g.append(0)
+    g.append(0)
+    g.append(0)
+    while len(g)-3 > y :
+        if g[y+1]-g[y]== 1 and g[y+2]-g[y+1]== 1 and g[y+3]-g[y+3]== 1:
+            r = 15
+        y += 1
     return(r)
 
