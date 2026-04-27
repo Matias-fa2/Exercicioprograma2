@@ -49,3 +49,16 @@ def calcula_pontos_sequencia_baixa(dados_rolados):
 
     return 0
 
+def calcula_pontos_sequencia_alta(dados_rolados):
+    dados_rolados = sorted(set(dados_rolados))  
+    s = 1 
+
+    for i in range(len(dados_rolados) - 1):
+        if dados_rolados[i+1] - dados_rolados[i] == 1:
+            s += 1
+            if s >= 5:
+                return 30
+        else:
+            s = 1
+
+    return 0
