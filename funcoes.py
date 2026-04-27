@@ -25,3 +25,12 @@ def calcula_pontos_regra_simples(dados_rolados):
     for i in range(1,7):
         pontuacao[i] = pontuacao.get(i, 0) # coloca os numeros que nao sairam nos dados
     return dict(sorted(pontuacao.items()))
+
+def calcula_pontos_soma (dados_rolados):
+    n = 0
+    r = 0
+    while len(dados_rolados) > n :
+        x = dados_rolados[n]
+        r = r + x
+        n += 1
+    return(r)
