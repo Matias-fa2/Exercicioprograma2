@@ -79,5 +79,6 @@ def calcula_pontos_full_house (dados_rolados):
     if sorted(valores) == [2, 3]:
         while n < len(dados_rolados):
             s = s + dados_rolados[n]
+            n += 1
         return (s)
     return 0
