@@ -103,3 +103,18 @@ def calcula_pontos_quadra (dados_rolados):
         i += 1
     return 0
 
+def calcula_pontos_quina (dados_rolados):
+    dados_rolados = sorted(dados_rolados)
+    i = 0
+    while i < len(dados_rolados):
+        e = 0
+        x = 0
+        while e < len(dados_rolados):
+            if dados_rolados[i] == dados_rolados[e]:
+                x += 1
+            if x >= 5:
+                return 50
+            e += 1
+        i += 1
+    return 0
+
