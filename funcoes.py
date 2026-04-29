@@ -95,4 +95,5 @@ def calcula_pontos_quadra (dados_rolados):
                 s = s + dados_rolados[n]
                 n += 1
             return(s)
+        i += 1
     return 0
