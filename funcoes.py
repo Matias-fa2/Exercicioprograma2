@@ -66,6 +66,8 @@ def calcula_pontos_sequencia_alta(dados_rolados):
 def calcula_pontos_full_house (dados_rolados):
     contagens = {}
     i = 0
+    n = 0
+    s = 0
     while i < len(dados_rolados):
         valor = dados_rolados[i]
         if valor in contagens:
@@ -75,6 +77,7 @@ def calcula_pontos_full_house (dados_rolados):
         i += 1
     valores = list(contagens.values())
     if sorted(valores) == [2, 3]:
-        s = sum(dados_rolados)
-        return s
+        while n < len(dados_rolados):
+            s = s + dados_rolados[n]
+        return (s)
     return 0
