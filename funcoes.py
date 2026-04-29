@@ -89,8 +89,7 @@ def calcula_pontos_quadra (dados_rolados):
     s = 0
     n = 0
     while i < len(dados_rolados):
-        x = [dados_rolados[i],dados_rolados[i],dados_rolados[i],dados_rolados[i]]
-        if x in dados_rolados:
+        if [dados_rolados[i],dados_rolados[i],dados_rolados[i],dados_rolados[i]] in dados_rolados:
             while n < len(dados_rolados):
                 s = s + dados_rolados[n]
                 n += 1
