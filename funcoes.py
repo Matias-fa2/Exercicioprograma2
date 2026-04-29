@@ -75,5 +75,6 @@ def calcula_pontos_full_house (dados_rolados):
         i += 1
     valores = list(contagens.values())
     if sorted(valores) == [2, 3]:
-        return sum(dados_rolados)
+        s = sum(dados_rolados)
+        return s
     return 0
