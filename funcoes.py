@@ -82,3 +82,17 @@ def calcula_pontos_full_house (dados_rolados):
             n += 1
         return (s)
     return 0
+
+def calcula_pontos_quadra (dados_rolados):
+    dados_rolados = sorted(dados_rolados)
+    i = 0
+    s = 0
+    n = 0
+    while i < len(dados_rolados):
+        x = [dados_rolados[i],dados_rolados[i],dados_rolados[i],dados_rolados[i]]
+        if x in dados_rolados:
+            while n < len(dados_rolados):
+                s = s + dados_rolados[n]
+                n += 1
+            return(s)
+    return 0
