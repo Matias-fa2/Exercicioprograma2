@@ -3,7 +3,6 @@ pontuacao = 0
 rodada = 0
 dados_rolados = []
 dados_guardados = []
-lista_int = '123456'
 ja_foi = []
 cartela = {
     'regra_simples': {
@@ -57,17 +56,18 @@ while rodada < 12:
             faz_jogada(dados_rolados, combinacao, cartela)
             ja_foi.append(combinacao)
             dados_rolados = rolar_dados(len(dados_rolados))
+            rodada+=1
+            
     elif opcao == 4:
         imprime_cartela(cartela)
     else: 
         print("Opção inválida. Tente novamente.")
     
-    rodada+=1
 
 i = 0
-while i < len(cartela):
-    for combinacao in cartela[i]:
-        pontuacao += cartela[i][combinacao]
+for tipo in cartela:
+    for combinacao in cartela[tipo]:
+        pontuacao += cartela[tipo][combinacao]
     i+=1
 
 print(f"Pontuação total: {pontuacao}")
