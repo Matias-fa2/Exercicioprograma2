@@ -55,7 +55,8 @@ while rodada < 12:
         if combinacao not in ja_foi:
             faz_jogada(dados_rolados, combinacao, cartela)
             ja_foi.append(combinacao)
-            dados_rolados = rolar_dados(len(dados_rolados))
+            dados_rolados = rolar_dados(5)
+            dados_guardados = []
             rodada+=1
             
     elif opcao == 4:
