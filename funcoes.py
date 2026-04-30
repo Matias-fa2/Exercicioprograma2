@@ -118,3 +118,20 @@ def calcula_pontos_quina (dados_rolados):
         i += 1
     return 0
 
+def calcula_pontos_regra_avancada(dados_rolados):
+    dict_dados = {
+        'cinco_iguais': 0,
+        'full_house': 0,
+        'quadra': 0,
+        'sem_combinacao': 0,
+        'sequencia_alta': 0,
+        'sequencia_baixa': 0
+        }
+    dict_dados['cinco_iguais'] = calcula_pontos_quina(dados_rolados)
+    dict_dados['full_house'] = calcula_pontos_full_house(dados_rolados)
+    dict_dados['quadra'] = calcula_pontos_quadra(dados_rolados)
+    dict_dados['sem_combinacao'] = calcula_pontos_soma(dados_rolados)
+    dict_dados['sequencia_alta'] = calcula_pontos_sequencia_alta(dados_rolados)
+    dict_dados['sequencia_baixa'] = calcula_pontos_sequencia_baixa(dados_rolados)
+    return dict_dados
+    
