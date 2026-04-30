@@ -129,5 +129,3 @@ def calcula_pontos_regra_avancada(dados_rolados):
     dict_dados['sequencia_baixa'] = calcula_pontos_sequencia_baixa(dados_rolados)
     return dict_dados
     
-
-print(calcula_pontos_regra_avancada([5,3,3,3,5]))
