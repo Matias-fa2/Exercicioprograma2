@@ -22,16 +22,13 @@ cartela = {
         'cinco_iguais': 0
     }
 }
-
+dados_rolados = rolar_dados(5) 
 imprime_cartela(cartela)
 while rodada < 12:
     rerrolou = 0
-    if rodada == 0:
-        dados_rolados = rolar_dados(5)        
     print(f'Dados rolados: {dados_rolados}')
     print(f'Dados guardados: {dados_guardados}')
     opcao = input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
-    opcao = input("Digite 1 para guardar..., etc:")
 
     if not opcao.isdigit():
         print("Opção inválida. Tente novamente.")
@@ -53,8 +50,7 @@ while rodada < 12:
         if rerrolou < 3:
             dados_rolados = rolar_dados(len(dados_rolados))
         else:
-            print("Você já usou todas as rerrolagens.")
-        
+            print("Você já usou todas as rerrolagens.")  
     elif opcao == 0:
         combinacao = input("Digite a combinação desejada:")
         if combinacao.isdigit(): combinacao = int(combinacao)
@@ -75,10 +71,9 @@ while rodada < 12:
 
     
 
-i = 0
+
 for tipo in cartela:
     for combinacao in cartela[tipo]:
         pontuacao += cartela[tipo][combinacao]
-    i+=1
 
 print(f"Pontuação total: {pontuacao}")
