@@ -37,15 +37,17 @@ while rodada < 12:
     opcao = int(opcao)
     if opcao == 1:
         indice = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
-        guardar_dado(dados_rolados, dados_guardados, indice)
+        if 0 <= indice < len(dados_rolados):
+            guardar_dado(dados_rolados, dados_guardados, indice)
     elif opcao == 2:
         if len(dados_guardados) > 0:
             indice = int(input("Digite o índice do dado a ser removido (0 a 4):"))
-            remover_dado(dados_rolados, dados_guardados, indice)
+            if 0 <= indice < len(dados_guardados):
+                remover_dado(dados_rolados, dados_guardados, indice)
 
     elif opcao == 3:
-        rerrolou +=1
-        if rerrolou < 3:
+        if rerrolou < 2:
+            rerrolou +=1
             dados_rolados = rolar_dados(len(dados_rolados))
         else:
             print("Você já usou todas as rerrolagens.")  
