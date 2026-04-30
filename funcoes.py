@@ -128,4 +128,14 @@ def calcula_pontos_regra_avancada(dados_rolados):
     dict_dados['sequencia_alta'] = calcula_pontos_sequencia_alta(dados_rolados)
     dict_dados['sequencia_baixa'] = calcula_pontos_sequencia_baixa(dados_rolados)
     return dict_dados
+
+
+def faz_jogada(dados, categoria, dict_cartela):
+    jogadas_avancada = ['cinco_iguais', 'full_house', 'quadra', 'sem_combinacao', 'sequencia_alta', 'sequencia_baixa']
+    jogadas_simples = '1234567'
+    if categoria in jogadas_avancada:
+        dict_cartela['regra_avancada'][categoria] = calcula_pontos_regra_avancada(dados)[categoria]
+    elif categoria in jogadas_simples:
+        dict_cartela['regra_simples'][categoria] = calcula_pontos_regra_simples(dados)[categoria]
     
+    return dict_cartela
