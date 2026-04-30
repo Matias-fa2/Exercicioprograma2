@@ -132,7 +132,7 @@ def calcula_pontos_regra_avancada(dados_rolados):
 
 def faz_jogada(dados, categoria, dict_cartela):
     jogadas_avancada = ['cinco_iguais', 'full_house', 'quadra', 'sem_combinacao', 'sequencia_alta', 'sequencia_baixa']
-    jogadas_simples = '1234567'
+    jogadas_simples = [1,2,3,4,5,6]
     if categoria in jogadas_avancada:
         dict_cartela['regra_avancada'][categoria] = calcula_pontos_regra_avancada(dados)[categoria]
     elif categoria in jogadas_simples:
