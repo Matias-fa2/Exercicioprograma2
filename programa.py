@@ -1,6 +1,7 @@
 from funcoes import *
 pontuacao = 0
 rodada = 0
+rerrolou = 0
 dados_rolados = []
 dados_guardados = []
 ja_foi = []
@@ -25,26 +26,22 @@ cartela = {
 dados_rolados = rolar_dados(5) 
 imprime_cartela(cartela)
 while rodada < 12:
-    rerrolou = 0
     print(f'Dados rolados: {dados_rolados}')
     print(f'Dados guardados: {dados_guardados}')
     opcao = input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
-
-    if not opcao.isdigit():
-        print("Opção inválida. Tente novamente.")
-        continue
-
     opcao = int(opcao)
-
-    if opcao not in [0,1,2,3,4]:
+    while opcao not in [0,1,2,3,4]:
         print("Opção inválida. Tente novamente.")
-        continue
+        opcao = input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
+        opcao = int(opcao)
     if opcao == 1:
         indice = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
         guardar_dado(dados_rolados, dados_guardados, indice)
     elif opcao == 2:
-        indice = int(input("Digite o índice do dado a ser removido (0 a 4):"))
-        remover_dado(dados_rolados, dados_guardados, indice)
+        if len(dados_guardados) > 0:
+            indice = int(input("Digite o índice do dado a ser removido (0 a 4):"))
+            remover_dado(dados_rolados, dados_guardados, indice)
+
     elif opcao == 3:
         rerrolou +=1
         if rerrolou < 3:
@@ -64,6 +61,7 @@ while rodada < 12:
             ja_foi.append(combinacao)
             dados_rolados = rolar_dados(5)
             dados_guardados = []
+            rerrolou = 0
             rodada+=1
             
     elif opcao == 4:
