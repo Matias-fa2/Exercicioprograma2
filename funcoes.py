@@ -46,7 +46,7 @@ def calcula_pontos_sequencia_baixa(dados_rolados):
                 return 15
         else:
             s = 1
-
+        i+=1
     return 0
 
 def calcula_pontos_sequencia_alta(dados_rolados):
@@ -60,6 +60,7 @@ def calcula_pontos_sequencia_alta(dados_rolados):
                 return 30
         else:
             s = 1
+        i+=1
 
     return 0
 
@@ -128,3 +129,5 @@ def calcula_pontos_regra_avancada(dados_rolados):
     dict_dados['sequencia_baixa'] = calcula_pontos_sequencia_baixa(dados_rolados)
     return dict_dados
     
+
+print(calcula_pontos_regra_avancada([5,3,3,3,5]))
